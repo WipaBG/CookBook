@@ -1,0 +1,37 @@
+{{#with recipe}}
+<article class="recipe-detail">
+    <img src="{{image}}" alt="Spaghetti Carbonara">
+    <h2>{{title}}</h2>
+    <p>{{description}}</p>
+
+    <h3>-----------------------------------------------------</h3>
+
+    <h3>Ingredients:</h3>
+    <p>{{ingredients}}</p>
+
+    <h3>-----------------------------------------------------</h3>
+
+    <h3>Instructions:</h3>
+    <p>{{instructions}}</p>
+
+    <h3>-----------------------------------------------------</h3>
+
+    <h3>People Who Recommend: {{recommend}}</h3>
+
+</article>
+{{#if hasUser}}
+<div class="command">
+
+    {{#if isAuthor}}
+    <a href="/edit/{{_id}}">Edit</a>
+    <a href="/delete/{{_id}}">Delete</a>
+    {{else}}
+    {{#if hasRocommended}}
+    <p>You've already recommended this recipe!</p>
+    {{else}}
+    <a href="/recommend/{{_id}}">Recommend</a>
+    {{/if}}
+    {{/if}}
+</div>
+{{/if}}
+{{/with}}

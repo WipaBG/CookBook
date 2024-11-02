@@ -1,0 +1,29 @@
+<!-- In case of error, you should display div with class "error-container" -->
+<!-- You can choose to display the first error or all of them (error message/s in your opinion) -->
+{{#if errors}}
+<div class="error-container">
+    {{#each errros}}
+            <p>{{this}}</p>
+        </div>
+    {{/each}}
+{{/if}}
+
+<section class="hero">
+    <h2>Welcome to Home Cooking Recipes</h2>
+    <p>Your go-to place for delicious and easy-to-make recipes.</p>
+    <a href="/catalog" class="btn">Explore Recipes</a>
+</section>
+<section class="featured-recipes">
+    <h2>Featured Recipes</h2>
+
+    <div class="recipes">
+        {{#if recipes}}
+         {{#each recipes}}
+            {{> recipe}}
+        {{/each}}
+        {{else}}
+        <p class="no-post">There are no recipes found yet!</p> 
+
+        {{/if}}
+    </div>
+</section>
